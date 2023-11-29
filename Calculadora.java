@@ -96,13 +96,9 @@ public class Calculadora {
                 System.out.println("Menú MCD"
                         + "\n 1. Calcular el MCD de 2 números"
                         + "\n 2. Calcular el MCD de 3 números");
-                int opMCM = sc.nextInt();
+                int opmcm= sc.nextInt();
 
-                int MCDnumero1,
-                        MCDnumero2,
-                        MCDnumero3,
-                        maximo,
-                        MCD;
+                int mcmnumero1, mcmnumero2, mcmnumero3, minimo, mcm;
 
                 switch (opMCM) {
 
@@ -129,7 +125,7 @@ public class Calculadora {
                                 "El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2 + " es:" + MCD);
 
                         break;
-                    case 2:
+                    case 3:
                         System.out.println("Ingresa el primer número");
                         MCDnumero1 = sc.nextInt();
 
@@ -159,6 +155,8 @@ public class Calculadora {
                         System.out.println(
                                 "El número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
                         opMCM = sc.nextInt();
+                        case 4:
+                        break;
                 }
 
                 break;
