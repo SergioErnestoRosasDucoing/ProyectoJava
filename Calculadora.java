@@ -3,31 +3,53 @@ package calculadora;
 import java.util.Scanner;
 
 /**
- *
- * @author SERGIO ERNESTO
+ * @author SERGIO ERNESTO ROSAS DUCOING Y ABRAHAM RODRIGUEZ CONTRERAS
  */
 public class Calculadora {
 
-    /**
-     * @param args the command line arguments
-     */
+    public static boolean validarNumeros(String numero) {
+        int num;
+        try {
+            num = Integer.parseInt(numero);
+            return true;
+
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
     public static void main(String[] args) {
-        // TODO code application logic here
+
         Scanner sc = new Scanner(System.in);
+        String opcionElegida, numeroIngresado;
+        int opcion;
 
         System.out.println("Menú calculadora"
                 + "\n 1. Calcular el Máximo Común Divisor (MCD)"
                 + "\n 2. Calcular el mínimo común multiplo (mcm)"
                 + "\n 3. Calcular la solución de una equación de segundo grado"
                 + "\n 4. Salir del programa");
-        int opcion = sc.nextInt();
+        opElegida = sc.next();
+        while (!validarNumeros(opElegida)) {
+            System.out
+                    .println("La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+            opcionElegida = sc.next();
+        }
+        opcion = Integer.parseInt(opcionElegida);
 
         switch (opcion) {
             case 1:
                 System.out.println("Menú MCD"
                         + "\n 1. Calcular el MCD de 2 números"
                         + "\n 2. Calcular el MCD de 3 números");
-                int opMCM = sc.nextInt();
+                opcionElegida = sc.next();
+                while (!validarNumeros(opElegida)) {
+                    System.out.println(
+                            "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                    opcionElegida = sc.next();
+                }
+                int opMCM = Integer.parseInt(opcionElegida);
 
                 int MCDnumero1,
                         MCDnumero2,
@@ -39,10 +61,22 @@ public class Calculadora {
 
                     case 1:
                         System.out.println("Ingresa el primer número");
-                        MCDnumero1 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        MCDnumero1 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el segundo número");
-                        MCDnumero2 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        MCDnumero2 = Integer.parseInt(numeroIngresado);
 
                         maximo = Math.max(MCDnumero1, MCDnumero2);
 
@@ -62,13 +96,31 @@ public class Calculadora {
                         break;
                     case 2:
                         System.out.println("Ingresa el primer número");
-                        MCDnumero1 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        MCDnumero1 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el segundo número");
-                        MCDnumero2 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        MCDnumero2 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el tercer número");
-                        MCDnumero3 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        MCDnumero3 = Integer.parseInt(numeroIngresado);
 
                         maximo = Math.max(Math.max(MCDnumero1, MCDnumero2), MCDnumero3);
 
@@ -108,10 +160,22 @@ public class Calculadora {
 
                     case 1:
                         System.out.println("Ingresa el primer número");
-                        mcmnumero1 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        mcmnumero1 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el segundo número");
-                        mcmnumero2 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        mcmnumero2 = Integer.parseInt(numeroIngresado);
 
                         maximo = Math.max(mcmnumero1, mcmnumero2);
 
@@ -132,13 +196,31 @@ public class Calculadora {
                         break;
                     case 2:
                         System.out.println("Ingresa el primer número");
-                        mcmnumero1 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        mcmnumero1 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el segundo número");
-                        mcmnumero2 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        mcmnumero2 = Integer.parseInt(numeroIngresado);
 
                         System.out.println("Ingresa el tercer número");
-                        mcmnumero3 = sc.nextInt();
+                        numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                            numeroIngresado = sc.next();
+                        }
+                        mcmnumero3 = Integer.parseInt(numeroIngresado);
 
                         maximo = Math.max(Math.max(mcmnumero1, mcmnumero2), mcmnumero3);
 
@@ -164,6 +246,38 @@ public class Calculadora {
                 }
 
                 break;
+            case 3:
+                System.out.println(
+                        "Ingresa los números de la ecuación cuadrática a resolver de la siguiente manera: ax^2 + bx + c = 0, NOTA: no es necesario poner el 0");
+                System.out.println("Ingresa el valor de a (el valor debe ser entero):");
+                numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor ingresa un número entero");
+                            numeroIngresado = sc.next();
+                        }
+                int a = Integer.parseInt(numeroIngresado);
+
+                System.out.println("Ingresa el valor de b (el valor debe ser entero):");
+                numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor ingresa un número entero");
+                            numeroIngresado = sc.next();
+                        }
+                int b = Integer.parseInt(numeroIngresado);
+
+                System.out.println("Ingresa el valor de c (el valor debe ser entero):");
+                numeroIngresado = sc.next();
+                        while (!validarNumeros(numeroIngresado)) {
+                            System.out.println(
+                                    "La entrada no es válida, por favor ingresa un número entero");
+                            numeroIngresado = sc.next();
+                        }
+                int c = Integer.parseInt(numeroIngresado);
+
+
+                break;
             default:
                 System.out.println(
                         "El número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
@@ -172,4 +286,4 @@ public class Calculadora {
     }
 
 }
-//commit
+// commit
