@@ -9,7 +9,7 @@ public class Calculadora {
 
     // Método para validar que el usuario ingresó numeros enteros
     public static boolean validarNumeros(String numero) {
-        float num;
+        int num;
         try {
             num = Integer.parseInt(numero);
             return true;
@@ -81,7 +81,7 @@ public class Calculadora {
             switch (opcion) {
                 case 1:
                     // Menú para máximo común divisor
-                    System.out.println("\u001b[32;1mMenú MCD\u001B[0m"
+                    System.out.println("\u001b[32;1mMenú máximo común divisor\u001B[0m"
                             + "\n 1. Calcular el MCD de 2 números"
                             + "\n 2. Calcular el MCD de 3 números");
                     opcionElegida = sc.next();
@@ -394,6 +394,12 @@ public class Calculadora {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
+                        while (!validarNumerosFloat(numeroIngresado)) {
+                            System.out.println(
+                                    "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                            numeroIngresado = sc.next();
+
+                        }
                     }
                     float a = Float.parseFloat(numeroIngresado);
 
@@ -403,6 +409,11 @@ public class Calculadora {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
+                        while (!validarNumerosFloat(numeroIngresado)) {
+                            System.out.println(
+                                    "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                            numeroIngresado = sc.next();
+                        }
                     }
                     float b = Float.parseFloat(numeroIngresado);
 
@@ -412,10 +423,15 @@ public class Calculadora {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
+                        while (!validarNumerosFloat(numeroIngresado)) {
+                            System.out.println(
+                                    "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                            numeroIngresado = sc.next();
+                        }
                     }
                     float c = Float.parseFloat(numeroIngresado);
 
-                   float raiz = (float)Math.sqrt((float)Math.pow(b, 2) - (4 * a * c));
+                    float raiz = (float) Math.sqrt((float) Math.pow(b, 2) - (4 * a * c));
 
                     float resultadoPositivo = ((-b) + raiz) / (2 * a);
                     System.out.println(
