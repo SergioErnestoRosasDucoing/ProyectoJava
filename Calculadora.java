@@ -20,7 +20,7 @@ public class Calculadora {
 
     }
 
-    //Método para validar que el usuario ingresó numeros con punto decimal
+    // Método para validar que el usuario ingresó numeros con punto decimal
     public static boolean validarNumerosDouble(String numero) {
         double num;
         try {
@@ -33,10 +33,10 @@ public class Calculadora {
 
     }
 
-    //Método para convertir los números negativos a positivos
+    // Método para convertir los números negativos a positivos
     public static int convertirAPositivo(int numero) {
         if (numero < 0) {
-            numero = -numero; 
+            numero = -numero;
         }
         return numero;
     }
@@ -48,29 +48,33 @@ public class Calculadora {
         int opcion;
 
         do {
-            System.out.println("Menú calculadora"
+            // Menú principal de la calculadora
+            System.out.println("\u001b[32;1mMenú calculadora\u001B[0m"
                     + "\n 1. Calcular el máximo común divisor (MCD)"
                     + "\n 2. Calcular el mínimo común multiplo (mcm)"
-                    + "\n 3. Calcular la solución de una equación de segundo grado"
+                    + "\n 3. Calcular la solución de una ecuación de segundo grado"
                     + "\n 4. Salir del programa");
             opcionElegida = sc.next();
+
             while (!validarNumeros(opcionElegida)) {
                 System.out
                         .println(
-                                "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                                "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                 opcionElegida = sc.next();
             }
             opcion = Integer.parseInt(opcionElegida);
 
             switch (opcion) {
                 case 1:
-                    System.out.println("Menú MCD"
+                    // Menú para máximo común divisor
+                    System.out.println("\u001b[32;1mMenú MCD\u001B[0m"
                             + "\n 1. Calcular el MCD de 2 números"
                             + "\n 2. Calcular el MCD de 3 números");
                     opcionElegida = sc.next();
+
                     while (!validarNumeros(opcionElegida)) {
                         System.out.println(
-                                "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
+                                "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         opcionElegida = sc.next();
                     }
                     int opMCM = Integer.parseInt(opcionElegida);
@@ -78,12 +82,59 @@ public class Calculadora {
                     int MCDnumero1,
                             MCDnumero2,
                             MCDnumero3,
-                            maximo, 
+                            maximo,
                             MCD;
 
                     switch (opMCM) {
 
                         case 1:
+                            System.out.println("Ingresa el primer número");
+                            numeroIngresado = sc.next();
+                            while (!validarNumeros(numeroIngresado)) {
+                                System.out.println(
+                                        "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                                numeroIngresado = sc.next();
+                            }
+                            MCDnumero1 = Integer.parseInt(numeroIngresado);
+                            MCDnumero1 = convertirAPositivo(MCDnumero1);
+
+                            System.out.println("Ingresa el segundo número");
+                            numeroIngresado = sc.next();
+                            while (!validarNumeros(numeroIngresado)) {
+                                System.out.println(
+                                        "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                                numeroIngresado = sc.next();
+                            }
+                            MCDnumero2 = Integer.parseInt(numeroIngresado);
+                            MCDnumero2 = convertirAPositivo(MCDnumero2);
+
+                            maximo = Math.max(MCDnumero1, MCDnumero2);
+
+                            if (MCDnumero1 == 0) {
+                                System.out.println("El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
+                                        + " es: " + MCDnumero2);
+                            } else if (MCDnumero2 == 0) {
+                                System.out.println("El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
+                                        + " es: " + MCDnumero1);
+                            } else {
+                                MCD = 0;
+                                for (int i = 1; i < maximo; i++) {
+                                    int varTemp1 = MCDnumero1 % i;
+                                    int varTemp2 = MCDnumero2 % i;
+
+                                    if (varTemp1 == 0 && varTemp2 == 0) {
+                                        MCD = i;
+                                    }
+                                }
+
+                                System.out.println(
+                                        "El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2 + " es: "
+                                                + MCD);
+
+                            }
+
+                            break;
+                        case 2:
                             System.out.println("Ingresa el primer número");
                             numeroIngresado = sc.next();
                             while (!validarNumeros(numeroIngresado)) {
@@ -104,41 +155,6 @@ public class Calculadora {
                             MCDnumero2 = Integer.parseInt(numeroIngresado);
                             MCDnumero2 = convertirAPositivo(MCDnumero2);
 
-                            maximo = Math.max(MCDnumero1, MCDnumero2);
-
-                            MCD = 0;
-                            for (int i = 1; i < maximo; i++) {
-                                int varTemp1 = MCDnumero1 % i;
-                                int varTemp2 = MCDnumero2 % i;
-
-                                if (varTemp1 == 0 && varTemp2 == 0) {
-                                    MCD = i;
-                                }
-                            }
-
-                            System.out.println(
-                                    "El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2 + " es: " + MCD);
-
-                            break;
-                        case 2:
-                            System.out.println("Ingresa el primer número");
-                            numeroIngresado = sc.next();
-                            while (!validarNumeros(numeroIngresado)) {
-                                System.out.println(
-                                        "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
-                                numeroIngresado = sc.next();
-                            }
-                            MCDnumero1 = Integer.parseInt(numeroIngresado);
-
-                            System.out.println("Ingresa el segundo número");
-                            numeroIngresado = sc.next();
-                            while (!validarNumeros(numeroIngresado)) {
-                                System.out.println(
-                                        "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
-                                numeroIngresado = sc.next();
-                            }
-                            MCDnumero2 = Integer.parseInt(numeroIngresado);
-
                             System.out.println("Ingresa el tercer número");
                             numeroIngresado = sc.next();
                             while (!validarNumeros(numeroIngresado)) {
@@ -147,22 +163,88 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             MCDnumero3 = Integer.parseInt(numeroIngresado);
+                            MCDnumero3 = convertirAPositivo(MCDnumero3);
 
                             maximo = Math.max(Math.max(MCDnumero1, MCDnumero2), MCDnumero3);
 
-                            MCD = 0;
-                            for (int i = 1; i < maximo; i++) {
-                                int varTemp1 = MCDnumero1 % i;
-                                int varTemp2 = MCDnumero2 % i;
-                                int varTemp3 = MCDnumero2 % i;
+                            if (MCDnumero1 == 0 && MCDnumero2 == 0) {
+                                System.out
+                                        .println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                + MCDnumero3 + " es: " + MCDnumero3);
+                                                break;
+                            } else if (MCDnumero1 == 0 && MCDnumero3 == 0) {
+                                System.out
+                                        .println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                + MCDnumero3 + " es: " + MCDnumero2);
+                                                break;
+                            } else if (MCDnumero2 == 0 && MCDnumero3 == 0) {
+                                System.out
+                                        .println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                + MCDnumero3 + " es: " + MCDnumero1);
+                                                break;
+                            } else if (MCDnumero1 == 0) {
+                                MCD = 0;
+                                for (int i = 1; i < maximo; i++) {
+                                    int varTemp2 = MCDnumero2 % i;
+                                    int varTemp3 = MCDnumero3 % i;
 
-                                if (varTemp1 == 0 && varTemp2 == 0 && varTemp3 == 0) {
-                                    MCD = i;
+                                    if (varTemp2 == 0 && varTemp3 == 0) {
+                                        MCD = i;
+                                    }
                                 }
+                                    System.out.println(
+                                            "El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                    + MCDnumero3 + " es: " + MCD);
+                                
+                                break;
+                            } else if (MCDnumero2 == 0) {
+                                MCD = 0;
+                                for (int i = 1; i < maximo; i++) {
+                                    int varTemp1 = MCDnumero1 % i;
+                                    int varTemp3 = MCDnumero3 % i;
+
+                                    if (varTemp1 == 0 && varTemp3 == 0) {
+                                        MCD = i;
+                                    }
+                                }
+                                    System.out.println(
+                                            "El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                    + MCDnumero3 + " es: " + MCD);
+                                
+                                break;
+                            } else if (MCDnumero3 == 0) {
+                                MCD = 0;
+                                for (int i = 1; i < maximo; i++) {
+                                    int varTemp1 = MCDnumero1 % i;
+                                    int varTemp2 = MCDnumero2 % i;
+
+                                    if (varTemp1 == 0 && varTemp2 == 0) {
+                                        MCD = i;
+                                    }
+                                }
+                                    System.out.println(
+                                            "El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                    + MCDnumero3 + " es: " + MCD);
+                                
+                                break;
+                            } else {
+                                MCD = 0;
+                                for (int i = 1; i < maximo; i++) {
+                                    int varTemp1 = MCDnumero1 % i;
+                                    int varTemp2 = MCDnumero2 % i;
+                                    int varTemp3 = MCDnumero2 % i;
+
+                                    if (varTemp1 == 0 && varTemp2 == 0 && varTemp3 == 0) {
+                                        MCD = i;
+                                    }
+                                }
+
+                                System.out
+                                        .println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                                + MCDnumero3 + " es:" + MCD);
+
                             }
 
-                            System.out.println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
-                                    + MCDnumero3 + " es:" + MCD);
                             break;
                         default:
                             System.out.println(
@@ -313,13 +395,13 @@ public class Calculadora {
 
                     break;
                 case 4:
-                System.out.println("Gracias por usar nuestra calculadora");
+                    System.out.println("Gracias por usar nuestra calculadora");
                     break;
                 default:
                     System.out.println(
                             "El número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
                     opcion = sc.nextInt();
-            }   
+            }
 
         } while (opcion != 4);
 
