@@ -93,67 +93,69 @@ public class Calculadora {
                 }
                 break;
             case 2:
-                System.out.println("Menú MCD"
-                        + "\n 1. Calcular el MCD de 2 números"
-                        + "\n 2. Calcular el MCD de 3 números");
-                int opMCM = sc.nextInt();
+                System.out.println("Menú mcm"
+                        + "\n 1. Calcular el mcm de 2 números"
+                        + "\n 2. Calcular el mcm de 3 números");
+                int opmcm = sc.nextInt();
 
-                int MCDnumero1,
-                        MCDnumero2,
-                        MCDnumero3,
-                        maximo,
-                        MCD;
+                int mcmnumero1,
+                        mcmnumero2,
+                        mcmnumero3,
+                        mcmmaximo,
+                        mcm;
 
-                switch (opMCM) {
+                switch (opmcm) {
 
                     case 1:
                         System.out.println("Ingresa el primer número");
-                        MCDnumero1 = sc.nextInt();
+                        mcmnumero1 = sc.nextInt();
 
                         System.out.println("Ingresa el segundo número");
-                        MCDnumero2 = sc.nextInt();
+                        mcmnumero2 = sc.nextInt();
 
-                        maximo = Math.max(MCDnumero1, MCDnumero2);
+                        maximo = Math.max(mcmnumero1, mcmnumero2);
 
                         MCD = 0;
                         for (int i = 1; i < maximo; i++) {
-                            int varTemp1 = MCDnumero1 % i;
-                            int varTemp2 = MCDnumero2 % i;
+                            int varTemp1 = mcmnumero1 % i;
+                            int varTemp2 = mcmnumero2 % i;
 
                             if (varTemp1 == 0 && varTemp2 == 0) {
                                 MCD = i;
                             }
                         }
+                        mcm = (mcmnumero1 * mcmnumero2) / MCD;
 
                         System.out.println(
-                                "El máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2 + " es:" + MCD);
+                                "El mínimo común multiplo de " + mcmnumero1 + " y " + mcmnumero2 + " es:" + mcm);
 
                         break;
                     case 2:
                         System.out.println("Ingresa el primer número");
-                        MCDnumero1 = sc.nextInt();
+                        mcmnumero1 = sc.nextInt();
 
                         System.out.println("Ingresa el segundo número");
-                        MCDnumero2 = sc.nextInt();
+                        mcmnumero2 = sc.nextInt();
 
                         System.out.println("Ingresa el tercer número");
-                        MCDnumero3 = sc.nextInt();
+                        mcmnumero3 = sc.nextInt();
 
-                        maximo = Math.max(Math.max(MCDnumero1, MCDnumero2), MCDnumero3);
+                        maximo = Math.max(Math.max(mcmnumero1, mcmnumero2), mcmnumero3);
 
                         MCD = 0;
                         for (int i = 1; i < maximo; i++) {
-                            int varTemp1 = MCDnumero1 % i;
-                            int varTemp2 = MCDnumero2 % i;
-                            int varTemp3 = MCDnumero2 % i;
+                            int varTemp1 = mcmnumero1 % i;
+                            int varTemp2 = mcmnumero2 % i;
+                            int varTemp3 = mcmnumero2 % i;
 
                             if (varTemp1 == 0 && varTemp2 == 0 && varTemp3 == 0) {
                                 MCD = i;
                             }
                         }
+                        mcm = (mcmnumero1 * mcmnumero2 * mcmnumero3) / MCD;
 
-                        System.out.println("El máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
-                                + MCDnumero3 + " es:" + MCD);
+                        System.out.println("El mínimo común multiplo de " + mcmnumero1 + ", " + mcmnumero2 + " y "
+                                + mcmnumero3 + " es:" + mcm);
                         break;
                     default:
                         System.out.println(
@@ -170,3 +172,4 @@ public class Calculadora {
     }
 
 }
+//commit
