@@ -9,7 +9,7 @@ public class Calculadora {
 
     // Método para validar que el usuario ingresó numeros enteros
     public static boolean validarNumeros(String numero) {
-        int num;
+        float num;
         try {
             num = Integer.parseInt(numero);
             return true;
@@ -21,10 +21,10 @@ public class Calculadora {
     }
 
     // Método para validar que el usuario ingresó numeros con punto decimal
-    public static boolean validarNumerosDouble(String numero) {
-        double num;
+    public static boolean validarNumerosFloat(String numero) {
+        float num;
         try {
-            num = Double.parseDouble(numero);
+            num = Float.parseFloat(numero);
             return true;
 
         } catch (Exception e) {
@@ -419,37 +419,37 @@ public class Calculadora {
                             "\u001b[32;1mIngresa los números de la ecuación cuadrática a resolver de la siguiente manera: ax^2 + bx + c = 0, NOTA: no es necesario poner el 0\u001B[0m");
                     System.out.println("Ingresa el valor de a (el valor debe ser entero):");
                     numeroIngresado = sc.next();
-                    while (!validarNumerosDouble(numeroIngresado)) {
+                    while (!validarNumerosFloat(numeroIngresado)) {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
                     }
-                    double a = Double.parseDouble(numeroIngresado);
+                    float a = Float.parseFloat(numeroIngresado);
 
                     System.out.println("Ingresa el valor de b (el valor debe ser entero):");
                     numeroIngresado = sc.next();
-                    while (!validarNumerosDouble(numeroIngresado)) {
+                    while (!validarNumerosFloat(numeroIngresado)) {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
                     }
-                    double b = Double.parseDouble(numeroIngresado);
+                    float b = Float.parseFloat(numeroIngresado);
 
                     System.out.println("Ingresa el valor de c (el valor debe ser entero):");
                     numeroIngresado = sc.next();
-                    while (!validarNumerosDouble(numeroIngresado)) {
+                    while (!validarNumerosFloat(numeroIngresado)) {
                         System.out.println(
                                 "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
                         numeroIngresado = sc.next();
                     }
-                    double c = Double.parseDouble(numeroIngresado);
+                    float c = Float.parseFloat(numeroIngresado);
 
-                    double raiz = Math.sqrt(Math.pow(b, 2) - (4 * a * c));
+                   float raiz = (float)Math.sqrt((float)Math.pow(b, 2) - (4 * a * c));
 
-                    double resultadoPositivo = ((-b) + raiz) / (2 * a);
+                    float resultadoPositivo = ((-b) + raiz) / (2 * a);
                     System.out.println(
                             "\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoPositivo);
-                    double resultadoNegativo = ((-b) - raiz) / (2 * a);
+                    float resultadoNegativo = ((-b) - raiz) / (2 * a);
                     System.out.println(
                             "\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoNegativo);
 
