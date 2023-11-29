@@ -93,20 +93,6 @@ public class Calculadora {
                     }
                     int opMCM = Integer.parseInt(opcionElegida);
 
-                    while (opcion < 1 || opcion > 2) {
-                        System.out.println(
-                                "\u001b[31mEl número ingresado no corresponde a una acción dentro del menú\u001B[0m");
-                        System.out.println("\u001b[31mPor favor ingresa un número que esté dentro del menú\u001B[0m");
-                        opcionElegida = sc.next();
-                        while (!validarNumeros(opcionElegida)) {
-                            System.out
-                                    .println(
-                                            "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
-                            opcionElegida = sc.next();
-                        }
-                        opcion = Integer.parseInt(opcionElegida);
-                    }
-
                     int MCDnumero1,
                             MCDnumero2,
                             MCDnumero3,
@@ -287,7 +273,7 @@ public class Calculadora {
                         default:
                             System.out.println(
                                     "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
-                            opMCM = sc.nextInt();
+
                     }
                     break;
                 case 2:
@@ -302,20 +288,6 @@ public class Calculadora {
                         opcionElegida = sc.next();
                     }
                     int opmcm = Integer.parseInt(opcionElegida);
-
-                    while (opcion < 1 || opcion > 2) {
-                        System.out.println(
-                                "\u001b[31mEl número ingresado no corresponde a una acción dentro del menú\u001B[0m");
-                        System.out.println("\u001b[31mPor favor ingresa un número que esté dentro del menú\u001B[0m");
-                        opcionElegida = sc.next();
-                        while (!validarNumeros(opcionElegida)) {
-                            System.out
-                                    .println(
-                                            "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
-                            opcionElegida = sc.next();
-                        }
-                        opcion = Integer.parseInt(opcionElegida);
-                    }
 
                     int mcmnumero1,
                             mcmnumero2,
@@ -409,8 +381,7 @@ public class Calculadora {
                             break;
                         default:
                             System.out.println(
-                                    "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menúu001B[0m");
-                            opMCM = sc.nextInt();
+                                    "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú\u001B[0m");
                     }
 
                     break;
