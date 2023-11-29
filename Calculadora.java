@@ -19,6 +19,18 @@ public class Calculadora {
 
     }
 
+    public static boolean validarNumerosDouble(String numero) {
+        double num;
+        try {
+            num = Double.parseDouble(numero);
+            return true;
+
+        } catch (Exception e) {
+            return false;
+        }
+
+    }
+
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
@@ -30,8 +42,8 @@ public class Calculadora {
                 + "\n 2. Calcular el mínimo común multiplo (mcm)"
                 + "\n 3. Calcular la solución de una equación de segundo grado"
                 + "\n 4. Salir del programa");
-        opElegida = sc.next();
-        while (!validarNumeros(opElegida)) {
+        opcionElegida = sc.next();
+        while (!validarNumeros(opcionElegida)) {
             System.out
                     .println("La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
             opcionElegida = sc.next();
@@ -44,7 +56,7 @@ public class Calculadora {
                         + "\n 1. Calcular el MCD de 2 números"
                         + "\n 2. Calcular el MCD de 3 números");
                 opcionElegida = sc.next();
-                while (!validarNumeros(opElegida)) {
+                while (!validarNumeros(opcionElegida)) {
                     System.out.println(
                             "La entrada no es válida, por favor elige una de las opciones existentes dentro del menú");
                     opcionElegida = sc.next();
@@ -251,31 +263,41 @@ public class Calculadora {
                         "Ingresa los números de la ecuación cuadrática a resolver de la siguiente manera: ax^2 + bx + c = 0, NOTA: no es necesario poner el 0");
                 System.out.println("Ingresa el valor de a (el valor debe ser entero):");
                 numeroIngresado = sc.next();
-                        while (!validarNumeros(numeroIngresado)) {
+                        while (!validarNumerosDouble(numeroIngresado)) {
                             System.out.println(
                                     "La entrada no es válida, por favor ingresa un número entero");
                             numeroIngresado = sc.next();
                         }
-                int a = Integer.parseInt(numeroIngresado);
+                double a = Double.parseDouble(numeroIngresado);
 
                 System.out.println("Ingresa el valor de b (el valor debe ser entero):");
                 numeroIngresado = sc.next();
-                        while (!validarNumeros(numeroIngresado)) {
+                        while (!validarNumerosDouble(numeroIngresado)) {
                             System.out.println(
                                     "La entrada no es válida, por favor ingresa un número entero");
                             numeroIngresado = sc.next();
                         }
-                int b = Integer.parseInt(numeroIngresado);
+                double b = Double.parseDouble(numeroIngresado);
+
 
                 System.out.println("Ingresa el valor de c (el valor debe ser entero):");
                 numeroIngresado = sc.next();
-                        while (!validarNumeros(numeroIngresado)) {
+                        while (!validarNumerosDouble(numeroIngresado)) {
                             System.out.println(
                                     "La entrada no es válida, por favor ingresa un número entero");
                             numeroIngresado = sc.next();
                         }
-                int c = Integer.parseInt(numeroIngresado);
+                double c = Double.parseDouble(numeroIngresado);
 
+
+                double raiz = Math.sqrt(Math.pow(b, 2) - (4 * a * c));
+
+                System.out.println(raiz);
+
+                double resultadoPositivo = ((-b) + raiz)/(2*a);
+                System.out.println("El resultado positivo de la ecuación es:" + resultadoPositivo);
+                double resultadoNegativo = ((-b) - raiz)/(2*a);
+                System.out.println("El resultado positivo de la ecuación es:" + resultadoNegativo); 
 
                 break;
             default:
