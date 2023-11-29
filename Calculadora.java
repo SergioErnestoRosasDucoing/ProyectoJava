@@ -37,7 +37,8 @@ public class Calculadora {
         String opcionElegida, numeroIngresado;
         int opcion;
 
-        System.out.println("Menú calculadora"
+        do {
+            System.out.println("Menú calculadora"
                 + "\n 1. Calcular el Máximo Común Divisor (MCD)"
                 + "\n 2. Calcular el mínimo común multiplo (mcm)"
                 + "\n 3. Calcular la solución de una equación de segundo grado"
@@ -165,7 +166,7 @@ public class Calculadora {
                 int mcmnumero1,
                         mcmnumero2,
                         mcmnumero3,
-                        mcmmaximo,
+                        
                         mcm;
 
                 switch (opmcm) {
@@ -305,6 +306,10 @@ public class Calculadora {
                         "El número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
                 opcion = sc.nextInt();
         }
+            
+        } while (opcion != 4);
+
+        
     }
 
 }
