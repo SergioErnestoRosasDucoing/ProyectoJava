@@ -64,6 +64,20 @@ public class Calculadora {
             }
             opcion = Integer.parseInt(opcionElegida);
 
+            while (opcion < 1 || opcion > 4) {
+                System.out
+                        .println("\u001b[31mEl número ingresado no corresponde a una acción dentro del menú\u001B[0m");
+                System.out.println("\u001b[31mPor favor ingresa un número que esté dentro del menú\u001B[0m");
+                opcionElegida = sc.next();
+                while (!validarNumeros(opcionElegida)) {
+                    System.out
+                            .println(
+                                    "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                    opcionElegida = sc.next();
+                }
+                opcion = Integer.parseInt(opcionElegida);
+            }
+
             switch (opcion) {
                 case 1:
                     // Menú para máximo común divisor
@@ -78,6 +92,20 @@ public class Calculadora {
                         opcionElegida = sc.next();
                     }
                     int opMCM = Integer.parseInt(opcionElegida);
+
+                    while (opcion < 1 || opcion > 2) {
+                        System.out.println(
+                                "\u001b[31mEl número ingresado no corresponde a una acción dentro del menú\u001B[0m");
+                        System.out.println("\u001b[31mPor favor ingresa un número que esté dentro del menú\u001B[0m");
+                        opcionElegida = sc.next();
+                        while (!validarNumeros(opcionElegida)) {
+                            System.out
+                                    .println(
+                                            "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                            opcionElegida = sc.next();
+                        }
+                        opcion = Integer.parseInt(opcionElegida);
+                    }
 
                     int MCDnumero1,
                             MCDnumero2,
@@ -111,11 +139,13 @@ public class Calculadora {
                             maximo = Math.max(MCDnumero1, MCDnumero2);
 
                             if (MCDnumero1 == 0) {
-                                System.out.println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
-                                        + " es: \u001b[35;1m" + MCDnumero2);
+                                System.out.println(
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
+                                                + " es: \u001b[35;1m" + MCDnumero2);
                             } else if (MCDnumero2 == 0) {
-                                System.out.println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
-                                        + " es: \u001b[35;1m" + MCDnumero1);
+                                System.out.println(
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
+                                                + " es: \u001b[35;1m" + MCDnumero1);
                             } else {
                                 MCD = 0;
                                 for (int i = 1; i < maximo; i++) {
@@ -128,7 +158,8 @@ public class Calculadora {
                                 }
 
                                 System.out.println(
-                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2 + " es: \u001b[35;1m"
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + " y " + MCDnumero2
+                                                + " es: \u001b[35;1m"
                                                 + MCD);
 
                             }
@@ -169,19 +200,22 @@ public class Calculadora {
 
                             if (MCDnumero1 == 0 && MCDnumero2 == 0) {
                                 System.out
-                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", "
+                                                + MCDnumero2 + " y "
                                                 + MCDnumero3 + " es: \u001b[35;1m" + MCDnumero3);
-                                                break;
+                                break;
                             } else if (MCDnumero1 == 0 && MCDnumero3 == 0) {
                                 System.out
-                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", "
+                                                + MCDnumero2 + " y "
                                                 + MCDnumero3 + " es: \u001b[35;1m" + MCDnumero2);
-                                                break;
+                                break;
                             } else if (MCDnumero2 == 0 && MCDnumero3 == 0) {
                                 System.out
-                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", "
+                                                + MCDnumero2 + " y "
                                                 + MCDnumero3 + " es: \u001b[35;1m" + MCDnumero1);
-                                                break;
+                                break;
                             } else if (MCDnumero1 == 0) {
                                 MCD = 0;
                                 for (int i = 1; i < maximo; i++) {
@@ -192,10 +226,11 @@ public class Calculadora {
                                         MCD = i;
                                     }
                                 }
-                                    System.out.println(
-                                            "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
-                                                    + MCDnumero3 + " es: \u001b[35;1m" + MCD);
-                                
+                                System.out.println(
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2
+                                                + " y "
+                                                + MCDnumero3 + " es: \u001b[35;1m" + MCD);
+
                                 break;
                             } else if (MCDnumero2 == 0) {
                                 MCD = 0;
@@ -207,10 +242,11 @@ public class Calculadora {
                                         MCD = i;
                                     }
                                 }
-                                    System.out.println(
-                                            "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
-                                                    + MCDnumero3 + " es: \u001b[35;1m" + MCD);
-                                
+                                System.out.println(
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2
+                                                + " y "
+                                                + MCDnumero3 + " es: \u001b[35;1m" + MCD);
+
                                 break;
                             } else if (MCDnumero3 == 0) {
                                 MCD = 0;
@@ -222,10 +258,11 @@ public class Calculadora {
                                         MCD = i;
                                     }
                                 }
-                                    System.out.println(
-                                            "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
-                                                    + MCDnumero3 + " es: \u001b[35;1m" + MCD);
-                                
+                                System.out.println(
+                                        "\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2
+                                                + " y "
+                                                + MCDnumero3 + " es: \u001b[35;1m" + MCD);
+
                                 break;
                             } else {
                                 MCD = 0;
@@ -240,7 +277,8 @@ public class Calculadora {
                                 }
 
                                 System.out
-                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", " + MCDnumero2 + " y "
+                                        .println("\u001b[36;1mEl máximo común divisor de " + MCDnumero1 + ", "
+                                                + MCDnumero2 + " y "
                                                 + MCDnumero3 + " es: \u001b[35;1m" + MCD);
 
                             }
@@ -248,7 +286,7 @@ public class Calculadora {
                             break;
                         default:
                             System.out.println(
-                                    "El número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
+                                    "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
                             opMCM = sc.nextInt();
                     }
                     break;
@@ -265,10 +303,23 @@ public class Calculadora {
                     }
                     int opmcm = Integer.parseInt(opcionElegida);
 
+                    while (opcion < 1 || opcion > 2) {
+                        System.out.println(
+                                "\u001b[31mEl número ingresado no corresponde a una acción dentro del menú\u001B[0m");
+                        System.out.println("\u001b[31mPor favor ingresa un número que esté dentro del menú\u001B[0m");
+                        opcionElegida = sc.next();
+                        while (!validarNumeros(opcionElegida)) {
+                            System.out
+                                    .println(
+                                            "\u001b[31mLa entrada no es válida, por favor elige una de las opciones existentes dentro del menú\u001B[0m");
+                            opcionElegida = sc.next();
+                        }
+                        opcion = Integer.parseInt(opcionElegida);
+                    }
+
                     int mcmnumero1,
                             mcmnumero2,
                             mcmnumero3,
-
                             mcm;
 
                     switch (opmcm) {
@@ -306,7 +357,8 @@ public class Calculadora {
                             mcm = (mcmnumero1 * mcmnumero2) / MCD;
 
                             System.out.println(
-                                    "\u001b[36;1mEl mínimo común multiplo de " + mcmnumero1 + " y " + mcmnumero2 + " es: \u001b[35;1m" + mcm);
+                                    "\u001b[36;1mEl mínimo común multiplo de " + mcmnumero1 + " y " + mcmnumero2
+                                            + " es: \u001b[35;1m" + mcm);
 
                             break;
                         case 2:
@@ -351,12 +403,13 @@ public class Calculadora {
                             }
                             mcm = (mcmnumero1 * mcmnumero2 * mcmnumero3) / MCD;
 
-                            System.out.println("\u001b[36;1mEl mínimo común multiplo de " + mcmnumero1 + ", " + mcmnumero2 + " y "
-                                    + mcmnumero3 + " es: \u001b[35;1m" + mcm);
+                            System.out.println(
+                                    "\u001b[36;1mEl mínimo común multiplo de " + mcmnumero1 + ", " + mcmnumero2 + " y "
+                                            + mcmnumero3 + " es: \u001b[35;1m" + mcm);
                             break;
                         default:
                             System.out.println(
-                                    "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menú");
+                                    "\u001b[31mEl número ingresado, no esta dentro de la lista de opciones, por favor ingresa un número que este dentro del menúu001B[0m");
                             opMCM = sc.nextInt();
                     }
 
@@ -394,9 +447,11 @@ public class Calculadora {
                     double raiz = Math.sqrt(Math.pow(b, 2) - (4 * a * c));
 
                     double resultadoPositivo = ((-b) + raiz) / (2 * a);
-                    System.out.println("\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoPositivo);
+                    System.out.println(
+                            "\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoPositivo);
                     double resultadoNegativo = ((-b) - raiz) / (2 * a);
-                    System.out.println("\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoNegativo);
+                    System.out.println(
+                            "\u001b[36;1mEl resultado positivo de la ecuación es :\u001b[35;1m" + resultadoNegativo);
 
                     break;
                 case 4:
@@ -409,7 +464,7 @@ public class Calculadora {
             }
 
         } while (opcion != 4);
-
+        sc.close();
     }
 
 }
