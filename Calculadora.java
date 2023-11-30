@@ -277,7 +277,7 @@ public class Calculadora {
                     }
                     break;
                 case 2:
-                    System.out.println("\u001b[32;1mMenú mcm\u001B[0m"
+                    System.out.println("\u001b[32;1mMenú mínimo común múltiplo\u001B[0m"
                             + "\n 1. Calcular el mcm de 2 números"
                             + "\n 2. Calcular el mcm de 3 números");
                     opcionElegida = sc.next();
@@ -305,6 +305,7 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             mcmnumero1 = Integer.parseInt(numeroIngresado);
+                            mcmnumero1 = convertirAPositivo(mcmnumero1);
 
                             System.out.println("Ingresa el segundo número");
                             numeroIngresado = sc.next();
@@ -314,6 +315,7 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             mcmnumero2 = Integer.parseInt(numeroIngresado);
+                            mcmnumero2 = convertirAPositivo(mcmnumero2);
 
                             maximo = Math.max(mcmnumero1, mcmnumero2);
 
@@ -342,6 +344,7 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             mcmnumero1 = Integer.parseInt(numeroIngresado);
+                            mcmnumero1 = convertirAPositivo(mcmnumero1);
 
                             System.out.println("Ingresa el segundo número");
                             numeroIngresado = sc.next();
@@ -351,6 +354,7 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             mcmnumero2 = Integer.parseInt(numeroIngresado);
+                            mcmnumero2 = convertirAPositivo(mcmnumero2);
 
                             System.out.println("Ingresa el tercer número");
                             numeroIngresado = sc.next();
@@ -360,6 +364,7 @@ public class Calculadora {
                                 numeroIngresado = sc.next();
                             }
                             mcmnumero3 = Integer.parseInt(numeroIngresado);
+                            mcmnumero3 = convertirAPositivo(mcmnumero3);
 
                             maximo = Math.max(Math.max(mcmnumero1, mcmnumero2), mcmnumero3);
 
